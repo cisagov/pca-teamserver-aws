@@ -1,0 +1,5 @@
+*~
+.terraform
+terraform.tfstate*
+*.tfvars
+packer/planet_piss.json
