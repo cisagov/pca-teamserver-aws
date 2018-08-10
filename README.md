@@ -1,11 +1,15 @@
 # NCATS PCA Teamserver in AWS #
 
-Build with:
+Build AMI via Packer with:
+```
+packer-io packer/teamserver.json
+```
+
+Build Terraform infrastructure with:
 ```
 cd terraform
-terraform apply
-cd ..
-packer build packer/pca_teamserver.json
+terraform workspace select <your_workspace>
+terraform apply -vars-file=<your_workspace>.tfvars
 ```
 
 ## License ##
