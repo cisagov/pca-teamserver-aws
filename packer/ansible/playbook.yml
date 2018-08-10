@@ -7,9 +7,11 @@
     - upgrade
     - python
 
-# - hosts: nmap
-#   name: Install nmap
-#   become: yes
-#   become_method: sudo
-#   roles:
-#     - nmap
+- hosts: cobalt_strike
+  name: Install Cobalt Strike
+  become: yes
+  become_method: sudo
+  roles:
+    - oracle_java_8
+    - cobalt_strike
+    - server_setup

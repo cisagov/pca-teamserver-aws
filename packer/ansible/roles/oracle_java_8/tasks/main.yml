@@ -1,0 +1,27 @@
+---
+# tasks file for oracle_java_8
+
+#
+# Note that I am following the directions I found here:
+# https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-debian-8
+#
+
+- name: Get the GPG key for the Oracle Java PPA
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: C2518248EEA14886
+
+- name: Add the PPA that contains Oracle Java
+  apt_repository:
+    repo: deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main
+
+- name: Accept the Oracle license so the installer won't prompt at install time
+  debconf:
+    name: oracle-java7-installer
+    question: shared/accepted-oracle-license-v1-1
+    value: 'true'
+    vtype: select
+
+- name: Install Oracle Java 8
+  apt:
+    name: oracle-java8-installer
