@@ -1,0 +1,22 @@
+---
+# tasks file for upgrade
+- name: Install aptitude (debian group only)
+  when: "'debian' in group_names"
+  apt:
+    name: 'aptitude'
+    state: latest
+    update_cache: yes
+    force_apt_get: yes
+
+- name: Upgrade the instance (debian group only)
+  when: "'debian' in group_names"
+  apt:
+    name: '*'
+    state: latest
+
+- name: Upgrade all packages (amazon-linux group only)
+  when: "'amazon-linux' in group_names"
+  yum:
+    name: '*'
+    state: latest
+    update_cache: yes
