@@ -1,4 +1,8 @@
 # The bastion EC2 instance
+locals {
+  tags = "${merge(var.tags, map("Name", "PCA Teamserver"))}"
+}
+
 resource "aws_instance" "teamserver" {
   ami = "${data.aws_ami.teamserver.id}"
   instance_type = "t2.micro"
@@ -19,6 +23,6 @@ resource "aws_instance" "teamserver" {
 
   user_data = "${data.template_cloudinit_config.ssh_cloud_init_tasks.rendered}"
 
-  tags = "${merge(var.tags, map("Name", "PCA Teamserver"))}"
-  volume_tags = "${merge(var.tags, map("Name", "PCA Teamserver"))}"
+  tags = "${local.tags}"
+  volume_tags = "${local.tags}"
 }
