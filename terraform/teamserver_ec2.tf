@@ -9,6 +9,8 @@ resource "aws_instance" "teamserver" {
   # ebs_optimized = true
   availability_zone = "${var.aws_region}${var.aws_availability_zone}"
 
+  # This is the public subnet of the VPC
+  subnet_id = "${aws_subnet.public.id}"
   associate_public_ip_address = true
 
   root_block_device {
@@ -17,8 +19,8 @@ resource "aws_instance" "teamserver" {
     delete_on_termination = true
   }
 
-  security_groups = [
-    "${aws_security_group.teamserver.name}"
+  vpc_security_group_ids = [
+    "${aws_security_group.teamserver.id}"
   ]
 
   user_data = "${data.template_cloudinit_config.ssh_cloud_init_tasks.rendered}"
