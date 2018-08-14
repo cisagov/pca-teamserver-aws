@@ -5,7 +5,7 @@ locals {
 
 resource "aws_instance" "teamserver" {
   ami = "${data.aws_ami.teamserver.id}"
-  instance_type = "t2.micro"
+  instance_type = "t2.medium"
   # ebs_optimized = true
   availability_zone = "${var.aws_region}${var.aws_availability_zone}"
 

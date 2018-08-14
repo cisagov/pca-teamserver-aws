@@ -14,4 +14,10 @@
   roles:
     - oracle_java_8
     - cobalt_strike
+
+- hosts: server_setup
+  name: Install ServerSetup script
+  become: yes
+  become_method: sudo
+  roles:
     - server_setup
