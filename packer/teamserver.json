@@ -38,7 +38,8 @@
             "groups": [
                 "debian",
                 "cobalt_strike",
-                "server_setup"
+                "server_setup",
+                "dnsutils"
             ]
         }
     ]

@@ -21,3 +21,10 @@
   become_method: sudo
   roles:
     - server_setup
+
+- hosts: dnsutils
+  name: Install dnsutils
+  become: yes
+  become_method: sudo
+  roles:
+    - dnsutils
