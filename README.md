@@ -9,7 +9,7 @@ Build Terraform infrastructure with:
 ```
 cd terraform
 terraform workspace select <your_workspace>
-terraform apply -vars-file=<your_workspace>.tfvars
+terraform apply -var-file=<your_workspace>.tfvars
 ```
 
 ## License ##
