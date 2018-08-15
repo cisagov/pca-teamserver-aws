@@ -27,5 +27,6 @@ users:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKY5tqMRtnZSkVPwU0X1zKA8L3RnvmhSAR/bHAtd3Vcr kyle.evers
   - name: pcauser
     shell: /bin/bash
+    sudo: [ "ALL=(ALL) NOPASSWD:/opt/ServerSetup/ServerSetup.sh" ]
     ssh-authorized-keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDL/qA5VT4qkBDOpBXX0vPRFvcvj2ZjEWT4AueBe/jzw pcauser
