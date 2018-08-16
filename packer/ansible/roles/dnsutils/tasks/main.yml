@@ -1,0 +1,6 @@
+---
+# tasks file for dnsutils
+
+- name: Install dnsutils
+  apt:
+    name: dnsutils
