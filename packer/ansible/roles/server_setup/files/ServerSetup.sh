@@ -173,7 +173,7 @@ function install_ssl_Cert() {
         fi
         ((i++))
     done
-    command="./certbot-auto certonly --standalone "
+    command="certbot certonly --standalone"
     for i in "${letsencryptdomains[@]}";
         do
             command="$command -d $i"
