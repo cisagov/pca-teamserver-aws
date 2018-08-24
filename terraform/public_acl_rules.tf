@@ -3,6 +3,8 @@ locals {
   # to ingress
   trusted_ingress_ports = [
     22,
+    587,
+    993,
     50050
   ]
 
