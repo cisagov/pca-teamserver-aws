@@ -3,8 +3,7 @@ locals {
   # to ingress
   trusted_ingress_ports = [
     22,
-    25,
-    587,
+    993,
     50050
   ]
 
@@ -13,7 +12,8 @@ locals {
   untrusted_ingress_ports = [
     80,
     443,
-    993
+    25,
+    587
   ]
 
   # The ports on which traffic is allowed to egress
