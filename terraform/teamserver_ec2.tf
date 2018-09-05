@@ -1,6 +1,6 @@
 # The bastion EC2 instance
 locals {
-  tags = "${merge(var.tags, map("Name", "PCA Teamserver"))}"
+  tags = "${merge(var.tags, map("Name", "PCA Teamserver", "Publish Egress", "True"))}"
 }
 
 resource "aws_instance" "teamserver" {
