@@ -1,11 +1,12 @@
 ---
 - hosts: all
-  name: Update the base image and install python
+  name: Update the base image, install python, and make journald logs persistent
   become: yes
   become_method: sudo
   roles:
     - upgrade
     - python
+    - journald
 
 - hosts: cobalt_strike
   name: Install Cobalt Strike

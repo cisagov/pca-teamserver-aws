@@ -23,5 +23,5 @@
     vtype: select
 
 - name: Install Oracle Java 8
-  apt:
+  package:
     name: oracle-java8-installer
