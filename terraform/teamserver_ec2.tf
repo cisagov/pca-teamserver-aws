@@ -3,6 +3,13 @@ locals {
   tags = "${merge(var.tags, map("Name", "PCA Teamserver", "Publish Egress", "True"))}"
 }
 
+# The Elastic IPs for the teamserver
+resource "aws_eip" "teamserver_eip" {
+  vpc = true
+  tags = "${merge(var.tags, map("Name", "PCA Teamserver EIP", "Publish Egress", "True"))}"
+}
+
+# The teamserver EC2 instance
 resource "aws_instance" "teamserver" {
   ami = "${data.aws_ami.teamserver.id}"
   instance_type = "t2.medium"
@@ -11,7 +18,6 @@ resource "aws_instance" "teamserver" {
 
   # This is the public subnet of the VPC
   subnet_id = "${aws_subnet.public.id}"
-  associate_public_ip_address = true
 
   root_block_device {
     volume_type = "gp2"
@@ -27,4 +33,10 @@ resource "aws_instance" "teamserver" {
 
   tags = "${local.tags}"
   volume_tags = "${local.tags}"
+}
+
+# The EIP association for the teamserver
+resource "aws_eip_association" "eip_assoc" {
+  instance_id = "${aws_instance.teamserver.id}"
+  allocation_id = "${aws_eip.teamserver_eip.id}"
 }
