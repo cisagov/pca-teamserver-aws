@@ -1,4 +1,4 @@
-# The bastion EC2 instance
+# The teamserver EC2 instance
 locals {
   tags = "${merge(var.tags, map("Name", "PCA Teamserver", "Publish Egress", "True"))}"
 }
