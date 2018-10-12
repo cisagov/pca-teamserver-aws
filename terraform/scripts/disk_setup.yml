@@ -1,0 +1,21 @@
+#cloud-config
+
+mounts:
+  # Add new mounts to /etc/fstab, but don't automatically mount them.
+  - [ ${device}, /opt/PCA, ext4, 'defaults,noauto', '0', '2' ]
+
+bootcmd:
+  # Wait for EBS disks to be attached
+  - 'while [ `lsblk | grep -c " disk"` -lt 2 ]; do echo Waiting for disks to attach...; sleep 5; done'
+  # Format filesystem on EBS volume (if it doesn't already exist)
+  # 
+  # fs_setup does not honor the overwrite argument.  Always in
+  # full-cowboy mode. (v0.7.9)
+  - 'blkid -c /dev/null ${device} || mkfs.ext4 ${device} -L pca_data'
+  # Mount report volume and set ownership.  Due to funky timing of
+  # mounts vs. bootcmd, we have to specify the full mount commands.
+  - '[ -d /opt/PCA ] || mkdir /opt/PCA'
+  - 'mount --verbose --types ext4 ${device} /opt/PCA'
+
+output:
+  - all: '| tee -a /var/log/cloud-init-output.log'

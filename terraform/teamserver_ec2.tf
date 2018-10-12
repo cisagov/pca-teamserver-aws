@@ -29,7 +29,7 @@ resource "aws_instance" "teamserver" {
     "${aws_security_group.teamserver.id}"
   ]
 
-  user_data = "${data.template_cloudinit_config.ssh_cloud_init_tasks.rendered}"
+  user_data = "${data.template_cloudinit_config.teamserver_cloud_init_tasks.rendered}"
 
   tags = "${local.tags}"
   volume_tags = "${local.tags}"
@@ -39,4 +39,48 @@ resource "aws_instance" "teamserver" {
 resource "aws_eip_association" "eip_assoc" {
   instance_id = "${aws_instance.teamserver.id}"
   allocation_id = "${aws_eip.teamserver_eip.id}"
+}
+
+# Extra volume for storing PCA data that we want to be immortal.  I
+# use the prevent_destroy lifecycle element to disallow the
+# destruction of this volume via terraform.
+#
+# This volume eventually gets mounted at /opt/PCA.
+resource "aws_ebs_volume" "teamserver_data" {
+  availability_zone = "${var.aws_region}${var.aws_availability_zone}"
+  type = "io1"
+  size = 10
+  iops = 100
+  encrypted = true
+
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
+resource "aws_volume_attachment" "teamserver_data_attachment" {
+  device_name = "/dev/xvdb"
+  volume_id = "${aws_ebs_volume.teamserver_data.id}"
+  instance_id = "${aws_instance.teamserver.id}"
+
+  # Terraform attempts to destroy the volume attachments before it
+  # attempts to destroy the EC2 instance they are attached to.  EC2
+  # does not like that and it results in the failed destruction of the
+  # volume attachments.  To get around this, we explicitly terminate
+  # the instance via the AWS CLI in a destroy provisioner; this
+  # gracefully shuts down the instance and allows terraform to
+  # successfully destroy the volume attachments.
+  provisioner "local-exec" {
+    when = "destroy"
+    command = "aws --region=${var.aws_region} ec2 terminate-instances --instance-ids ${aws_instance.teamserver.id}"
+    on_failure = "continue"
+  }
+
+  # Wait until instance is terminated before continuing on
+  provisioner "local-exec" {
+    when = "destroy"
+    command = "aws --region=${var.aws_region} ec2 wait instance-terminated --instance-ids ${aws_instance.teamserver.id}"
+  }
+
+  skip_destroy = true
 }
