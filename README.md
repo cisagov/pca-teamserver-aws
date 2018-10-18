@@ -2,13 +2,14 @@
 
 Build AMI via Packer with:
 ```
-packer-io packer/teamserver.json
+packer packer/teamserver.json
 ```
 
 Build Terraform infrastructure with:
 ```
 cd terraform
 terraform workspace select <your_workspace>
+terrafrom init --upgrade
 terraform apply -var-file=<your_workspace>.tfvars
 ```
 
