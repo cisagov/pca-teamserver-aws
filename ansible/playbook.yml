@@ -1,0 +1,21 @@
+---
+- hosts: localhost
+  gather_facts: yes
+  check_mode: no
+  tasks:
+    - name: Add public ip addresses to an dynamic inventory
+      add_host:
+        name: "{{ host }}"
+        groups: "{{ host_groups.split(',') }}"
+
+    - wait_for:
+        port: 22
+        host: "{{ host }}"
+        search_regex: OpenSSH
+
+- hosts: all
+  name: License and upgrade Cobalt Strike
+  become: yes
+  become_method: sudo
+  roles:
+    - cobaltstrike
