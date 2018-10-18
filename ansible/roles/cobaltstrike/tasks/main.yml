@@ -41,6 +41,8 @@
   expect:
     chdir: /opt/cobaltstrike
     command: sh ./update
-    echo: yes
+    timeout: 300
     responses:
       continue: "yes"
+  async: 300
+  poll: 30
