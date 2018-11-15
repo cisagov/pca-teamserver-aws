@@ -12,7 +12,7 @@ resource "aws_eip" "teamserver_eip" {
 # The teamserver EC2 instance
 resource "aws_instance" "teamserver" {
   ami = "${data.aws_ami.teamserver.id}"
-  instance_type = "t2.medium"
+  instance_type = "t3.medium"
   # ebs_optimized = true
   availability_zone = "${var.aws_region}${var.aws_availability_zone}"
 

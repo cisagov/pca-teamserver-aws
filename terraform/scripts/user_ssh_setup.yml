@@ -25,9 +25,27 @@ users:
     shell: /bin/bash
     ssh-authorized-keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKY5tqMRtnZSkVPwU0X1zKA8L3RnvmhSAR/bHAtd3Vcr kyle.evers
-  - name: pcauser
+  - name: anna.etherton
     groups: [ sudo ]
-    shell: /bin/bash
     sudo: [ "ALL=(ALL) NOPASSWD:ALL" ]
+    shell: /bin/bash
     ssh-authorized-keys:
-      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDL/qA5VT4qkBDOpBXX0vPRFvcvj2ZjEWT4AueBe/jzw pcauser
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIObTD1GWHANZPdP/cMwRGEJdUMOBIb929uxDmAvJakzP anna.etherton
+  - name: kelly.thiele
+    groups: [ sudo ]
+    sudo: [ "ALL=(ALL) NOPASSWD:ALL" ]
+    shell: /bin/bash
+    ssh-authorized-keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM3c5AcNHUslX5t2t0YZyejRWY4n3dIzbJEZdxSDRU4V kelly.thiele
+  - name: genevieve.marquardt
+    groups: [ sudo ]
+    sudo: [ "ALL=(ALL) NOPASSWD:ALL" ]
+    shell: /bin/bash
+    ssh-authorized-keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHRCO/o4B8pBOfFMXzzpG5AA0xkLfP3tciDvmBpYPpkJ genevieve.marquardt
+  - name: laura.puterbaugh
+    groups: [ sudo ]
+    sudo: [ "ALL=(ALL) NOPASSWD:ALL" ]
+    shell: /bin/bash
+    ssh-authorized-keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMOkzMAtLFGefWGHwapMWUFfTRaTNN6cuwB+UmRxLOnl laura.puterbaugh
