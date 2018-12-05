@@ -1,6 +1,11 @@
 ---
 # tasks file for server_setup
 
+# ServerSetup uses git but doesn't install it
+- name: Install git
+  package:
+    name: git
+
 - name: Create the /opt/ServerSetup directory
   file:
     path: /opt/ServerSetup
