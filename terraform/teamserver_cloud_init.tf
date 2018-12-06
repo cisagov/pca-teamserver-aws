@@ -8,7 +8,7 @@ data "template_file" "disk_setup" {
   template = "${file("scripts/disk_setup.yml")}"
 
   vars {
-    device = "/dev/xvdb"
+    device = "/dev/nvme1n1"
   }
 }
 
