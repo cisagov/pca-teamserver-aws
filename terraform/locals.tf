@@ -3,5 +3,5 @@ locals {
   public_zone  = "cyber.dhs.gov"
 
   # Subdomain to use in the public DNS zone
-  public_subdomain = "pca."
+  public_subdomain = "pca.ncats."
 }
