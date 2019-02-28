@@ -29,7 +29,7 @@ resource "aws_instance" "teamserver" {
     "${aws_security_group.teamserver.id}"
   ]
 
-  user_data = "${data.template_cloudinit_config.teamserver_cloud_init_tasks.rendered}"
+  user_data_base64 = "${data.template_cloudinit_config.teamserver_cloud_init_tasks.rendered}"
 
   tags = "${local.tags}"
   volume_tags = "${local.tags}"
@@ -70,7 +70,7 @@ resource "aws_ebs_volume" "teamserver_data" {
   encrypted = true
 
   lifecycle {
-    prevent_destroy = true
+    prevent_destroy = false
   }
 }
 

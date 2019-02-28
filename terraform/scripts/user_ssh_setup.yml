@@ -49,3 +49,9 @@ users:
     shell: /bin/bash
     ssh-authorized-keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMOkzMAtLFGefWGHwapMWUFfTRaTNN6cuwB+UmRxLOnl laura.puterbaugh
+  - name: bryce.beuerlein
+    groups: [ sudo ]
+    sudo: [ "ALL=(ALL) NOPASSWD:ALL" ]
+    shell: /bin/bash
+    ssh-authorized-keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINCi/UDCweCp5f8ObgCfyy1+SoowfcK1IQUiSPhslw4K bryce.beuerlein
