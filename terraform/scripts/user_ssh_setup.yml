@@ -55,3 +55,9 @@ users:
     shell: /bin/bash
     ssh-authorized-keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINCi/UDCweCp5f8ObgCfyy1+SoowfcK1IQUiSPhslw4K bryce.beuerlein
+  - name: christian.ray
+    groups: [ sudo ]
+    sudo: [ "ALL=(ALL) NOPASSWD:ALL" ]
+    shell: /bin/bash
+    ssh-authorized-keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILBKK+80D52NaF0AlMM3VGyc4BQ+GWxkAMG8m5tgzobb christian.ray
