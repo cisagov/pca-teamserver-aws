@@ -1,31 +1,25 @@
 ---
 - hosts: all
-  name: Update the base image, install python, and make journald logs persistent
+  name: Update the base image, install python, add banner, and make journald logs persistent
   become: yes
   become_method: sudo
   roles:
     - upgrade
     - python
-    - journald
+    - nvme
+    - banner
+    - htop
+    - persist_journald
 
-- hosts: cobalt_strike
-  name: Install Cobalt Strike
+- hosts: teamserver
+  name: Install Cobalt Strike and server-setup script
   become: yes
   become_method: sudo
   roles:
     - oracle_java_8
     - cobalt_strike
-
-- hosts: server_setup
-  name: Install ServerSetup script
-  become: yes
-  become_method: sudo
-  roles:
     - server_setup
-
-- hosts: dnsutils
-  name: Install dnsutils
-  become: yes
-  become_method: sudo
-  roles:
-    - dnsutils
+  tasks:
+    - name: Install dnsutils
+      package:
+        name: dnsutils

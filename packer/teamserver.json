@@ -36,10 +36,7 @@
             "type": "ansible",
             "playbook_file": "packer/ansible/playbook.yml",
             "groups": [
-                "debian",
-                "cobalt_strike",
-                "server_setup",
-                "dnsutils"
+                "teamserver"
             ]
         }
     ]

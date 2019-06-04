@@ -1,6 +1,0 @@
----
-# tasks file for dnsutils
-
-- name: Install dnsutils
-  package:
-    name: dnsutils
