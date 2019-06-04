@@ -16,7 +16,7 @@
   become: yes
   become_method: sudo
   roles:
-    - oracle_java_8
+    - oracle_java_11
     - cobalt_strike
     - server_setup
   tasks:
