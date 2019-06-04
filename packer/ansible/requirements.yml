@@ -8,5 +8,7 @@
   name: persist_journald
 - src: https://github.com/cisagov/ansible-role-python
   name: python
+- src: https://github.com/cisagov/ansible-role-server-setup
+  name: server_setup
 - src: https://github.com/cisagov/ansible-role-upgrade
   name: upgrade
