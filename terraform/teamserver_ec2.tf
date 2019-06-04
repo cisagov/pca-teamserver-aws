@@ -41,22 +41,6 @@ resource "aws_eip_association" "eip_assoc" {
   allocation_id = "${aws_eip.teamserver_eip.id}"
 }
 
-# Provision the teamserver EC2 instance via Ansible
-module "teamserver_ansible_provisioner" {
-  source = "github.com/cloudposse/tf_ansible"
-
-  arguments = [
-    "--user=${var.remote_ssh_user}",
-    "--ssh-common-args='-o StrictHostKeyChecking=no'"
-  ]
-  envs = [
-    "host=${aws_eip.teamserver_eip.public_ip}",
-    "host_groups=cobaltstrike",
-  ]
-  playbook = "../ansible/playbook.yml"
-  dry_run = false
-}
-
 # Extra volume for storing PCA data that we want to be immortal.  I
 # use the prevent_destroy lifecycle element to disallow the
 # destruction of this volume via terraform.
