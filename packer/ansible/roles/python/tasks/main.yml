@@ -1,6 +1,0 @@
----
-# tasks file for python
-- name: Install python
-  package:
-    name: python
-    state: latest
