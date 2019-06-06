@@ -83,20 +83,12 @@ resource "aws_volume_attachment" "teamserver_data_attachment" {
   # the instance via the AWS CLI in a destroy provisioner; this
   # gracefully shuts down the instance and allows terraform to
   # successfully destroy the volume attachments.
-  # Terraform attempts to destroy the volume attachments before it
-  # attempts to destroy the EC2 instance they are attached to.  EC2
-  # does not like that and it results in the failed destruction of the
-  # volume attachments.  To get around this, we explicitly terminate
-  # the instance via the AWS CLI in a destroy provisioner; this
-  # gracefully shuts down the instance and allows terraform to
-  # successfully destroy the volume attachments.
   provisioner "local-exec" {
     when       = destroy
     command    = "aws --region=${var.aws_region} ec2 terminate-instances --instance-ids ${aws_instance.teamserver.id}"
     on_failure = continue
   }
 
-  # Wait until instance is terminated before continuing on
   # Wait until instance is terminated before continuing on
   provisioner "local-exec" {
     when    = destroy
