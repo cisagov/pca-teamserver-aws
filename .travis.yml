@@ -18,5 +18,7 @@ before_install:
 # file to use.
 script:
   - packer validate packer/teamserver.json
-  - cd terraform && terraform init -backend=false .
-  - cd terraform && terraform validate .
+  - cd terraform
+  - terraform init -backend=false .
+  - terraform validate .
+  - cd ..
