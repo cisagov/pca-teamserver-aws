@@ -1,5 +1,9 @@
 #!/bin/sh
 
+set -o nounset
+set -o errexit
+set -o pipefail
+
 # Usage:
 #   toggle_prevent_destroy_command.sh <regex> <file> <tmp_file>
 #

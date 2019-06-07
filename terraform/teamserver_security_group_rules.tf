@@ -58,4 +58,3 @@ resource "aws_security_group_rule" "teamserver_egress" {
   from_port = local.egress_ports[count.index]
   to_port   = local.egress_ports[count.index]
 }
-

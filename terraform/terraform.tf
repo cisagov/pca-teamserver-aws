@@ -7,4 +7,3 @@ terraform {
     key            = "pca_teamserver/terraform.tfstate"
   }
 }
-

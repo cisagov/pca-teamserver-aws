@@ -72,4 +72,3 @@ resource "aws_network_acl" "public" {
     },
   )
 }
-
