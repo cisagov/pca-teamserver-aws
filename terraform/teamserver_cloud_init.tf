@@ -30,4 +30,3 @@ data "template_cloudinit_config" "teamserver_cloud_init_tasks" {
     merge_type   = "list(append)+dict(recurse_array)+str()"
   }
 }
-

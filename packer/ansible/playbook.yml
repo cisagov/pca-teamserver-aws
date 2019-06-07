@@ -1,6 +1,8 @@
 ---
 - hosts: all
-  name: Update the base image, install python, add banner, and make journald logs persistent
+  name: >
+    Update the base image, install python, add banner, and make journald
+    logs persistent
   become: yes
   become_method: sudo
   roles:

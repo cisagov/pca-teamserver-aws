@@ -11,4 +11,3 @@ resource "aws_route53_record" "teamserver_pub_A" {
     aws_eip.teamserver_eip.public_ip,
   ]
 }
-

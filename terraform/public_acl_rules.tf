@@ -89,4 +89,3 @@ resource "aws_network_acl_rule" "public_ephemeral_ports" {
   from_port      = 1024
   to_port        = 65535
 }
-

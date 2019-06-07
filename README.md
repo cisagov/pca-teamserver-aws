@@ -3,12 +3,14 @@
 [![Build Status](https://travis-ci.com/cisagov/pca-teamserver-aws.svg?branch=develop)](https://travis-ci.com/cisagov/pca-teamserver-aws)
 
 Build AMI via Packer with:
-```
+
+```bash
 packer packer/teamserver.json
 ```
 
 Build Terraform infrastructure with:
-```
+
+```bash
 cd terraform
 terraform workspace select <your_workspace>
 terrafrom init --upgrade

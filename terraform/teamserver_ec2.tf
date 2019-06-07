@@ -97,4 +97,3 @@ resource "aws_volume_attachment" "teamserver_data_attachment" {
 
   skip_destroy = true
 }
-

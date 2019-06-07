@@ -31,4 +31,3 @@ variable "trusted_ingress_networks_ipv6" {
 variable "remote_ssh_user" {
   description = "The username to use when sshing to the EC2 instances"
 }
-
