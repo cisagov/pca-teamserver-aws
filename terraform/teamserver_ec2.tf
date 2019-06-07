@@ -67,7 +67,7 @@ resource "aws_ebs_volume" "teamserver_data" {
   encrypted         = true
 
   lifecycle {
-    prevent_destroy = false
+    prevent_destroy = true
   }
 }
 
