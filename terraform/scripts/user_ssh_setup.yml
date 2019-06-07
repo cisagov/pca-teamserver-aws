@@ -7,88 +7,96 @@ users:
     sudo: ["ALL=(ALL) NOPASSWD:ALL"]
     shell: /bin/bash
     ssh-authorized-keys:
-      - >
-        ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDMAreqS1aycngT1qQAsXfo7/
-        hzt8JdSvC1bD9Sr0WpTUVWWe6WW2mYQ9fHAYJ4pPGb/Jf3h15NRMHCwsMPuFoP
-        +9m7iebzvS47/ce1g07AOK3bf2yR12v/S9QFArgAyabqRpDz43yay2t+3IjSHx
-        ZlKKNg0nV4xiP/LRqXvzFCjZDAu5zslFH/urZ6bhHxQMywWdW0RHfWXdz+O6rG
-        R8f1soCPw7ylwf2AzlaeCR/WnT9QiK5TG5TxrkomnliE56T0JkhldGrTldkt2N
-        K1R9+3wF4603nQqKkcCgXFtZKk0wKc5T+Z/B/mS9LW0ayarj1V6H1i5mpscYOD
-        33Z6HalEXd25XO31oCDt9FuA7pHOZQInTpvNODktjwkkz0Dk6i6q3b60JaviB5
-        ECaC9bcQDfXFGVNzA/+UVtOIKOKmp7ge8n31jEEq6nklDxrVkA/7n7cKXjUTZb
-        V5Lru+3of8lLdYCcJhcLLMDSmJbGtw7/AN55+vxj072pLs1LAUcDBlEtqq5rSh
-        UcFeFDuxl0Cs7BRab87h6nO/uIKTAb4ZNbAKt0BuKW2gzRoVjUhibMLc/loJye
-        ZuWa67QQ8Ae76h24dPUz44Ryul/X5LHingGd3lwQMyW/0mjpVKjC0lsUsGa+J2
-        wezsMzxr8sj9TjYzhMCURf79E6DBUO1zUuFc0kyw== mark.feldhousen
+      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDMAreqS1aycngT1qQAsXfo7\
+      /hzt8JdSvC1bD9Sr0WpTUVWWe6WW2mYQ9fHAYJ4pPGb/Jf3h15NRMHCwsMPuFoP+\
+      9m7iebzvS47/ce1g07AOK3bf2yR12v/S9QFArgAyabqRpDz43yay2t+3IjSHxZlK\
+      KNg0nV4xiP/LRqXvzFCjZDAu5zslFH/urZ6bhHxQMywWdW0RHfWXdz+O6rGR8f1s\
+      oCPw7ylwf2AzlaeCR/WnT9QiK5TG5TxrkomnliE56T0JkhldGrTldkt2NK1R9+3w\
+      F4603nQqKkcCgXFtZKk0wKc5T+Z/B/mS9LW0ayarj1V6H1i5mpscYOD33Z6HalEX\
+      d25XO31oCDt9FuA7pHOZQInTpvNODktjwkkz0Dk6i6q3b60JaviB5ECaC9bcQDfX\
+      FGVNzA/+UVtOIKOKmp7ge8n31jEEq6nklDxrVkA/7n7cKXjUTZbV5Lru+3of8lLd\
+      YCcJhcLLMDSmJbGtw7/AN55+vxj072pLs1LAUcDBlEtqq5rShUcFeFDuxl0Cs7BR\
+      ab87h6nO/uIKTAb4ZNbAKt0BuKW2gzRoVjUhibMLc/loJyeZuWa67QQ8Ae76h24d\
+      PUz44Ryul/X5LHingGd3lwQMyW/0mjpVKjC0lsUsGa+J2wezsMzxr8sj9TjYzhMC\
+      URf79E6DBUO1zUuFc0kyw== mark.feldhousen"
   - name: david.redmin
     groups: [sudo]
     sudo: ["ALL=(ALL) NOPASSWD:ALL"]
     shell: /bin/bash
     ssh-authorized-keys:
       - >
-        ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPCUrFIDwLAZrlkzvK7rcOVYNE
-        7vSyopGHMFZTX7YlQS david.redmin
+        ssh-ed25519
+        AAAAC3NzaC1lZDI1NTE5AAAAIPCUrFIDwLAZrlkzvK7rcOVYNE7vSyopGHMFZTX7YlQS
+        david.redmin
   - name: jeremy.frasier
     groups: [sudo]
     sudo: ["ALL=(ALL) NOPASSWD:ALL"]
     shell: /bin/bash
     ssh-authorized-keys:
       - >
-        ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHJkFgYx58vd/JCikIQRVmQUBN
-        a5k1h9Z+xzM6AjZLqE jeremy.frasier
+        ssh-ed25519
+        AAAAC3NzaC1lZDI1NTE5AAAAIHJkFgYx58vd/JCikIQRVmQUBNa5k1h9Z+xzM6AjZLqE
+        jeremy.frasier
   - name: kyle.evers
     groups: [sudo]
     sudo: ["ALL=(ALL) NOPASSWD:ALL"]
     shell: /bin/bash
     ssh-authorized-keys:
       - >
-        ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKY5tqMRtnZSkVPwU0X1zKA8L3R
-        nvmhSAR/bHAtd3Vcr kyle.evers
+        ssh-ed25519
+        AAAAC3NzaC1lZDI1NTE5AAAAIKY5tqMRtnZSkVPwU0X1zKA8L3RnvmhSAR/bHAtd3Vcr
+        kyle.evers
   - name: anna.etherton
     groups: [sudo]
     sudo: ["ALL=(ALL) NOPASSWD:ALL"]
     shell: /bin/bash
     ssh-authorized-keys:
       - >
-        ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIObTD1GWHANZPdP/cMwRGEJdUMO
-        BIb929uxDmAvJakzP anna.etherton
+        ssh-ed25519
+        AAAAC3NzaC1lZDI1NTE5AAAAIObTD1GWHANZPdP/cMwRGEJdUMOBIb929uxDmAvJakzP
+        anna.etherton
   - name: kelly.thiele
     groups: [sudo]
     sudo: ["ALL=(ALL) NOPASSWD:ALL"]
     shell: /bin/bash
     ssh-authorized-keys:
       - >
-        ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM3c5AcNHUslX5t2t0YZyejRWY4
-        n3dIzbJEZdxSDRU4V kelly.thiele
+        ssh-ed25519
+        AAAAC3NzaC1lZDI1NTE5AAAAIM3c5AcNHUslX5t2t0YZyejRWY4n3dIzbJEZdxSDRU4V
+        kelly.thiele
   - name: genevieve.marquardt
     groups: [sudo]
     sudo: ["ALL=(ALL) NOPASSWD:ALL"]
     shell: /bin/bash
     ssh-authorized-keys:
       - >
-        ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHRCO/o4B8pBOfFMXzzpG5AA0xkL
-        fP3tciDvmBpYPpkJ genevieve.marquardt
+        ssh-ed25519
+        AAAAC3NzaC1lZDI1NTE5AAAAIHRCO/o4B8pBOfFMXzzpG5AA0xkLfP3tciDvmBpYPpkJ
+        genevieve.marquardt
   - name: laura.puterbaugh
     groups: [sudo]
     sudo: ["ALL=(ALL) NOPASSWD:ALL"]
     shell: /bin/bash
     ssh-authorized-keys:
       - >
-        ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMOkzMAtLFGefWGHwapMWUFfTRaT
-        NN6cuwB+UmRxLOnl laura.puterbaugh
+        ssh-ed25519
+        AAAAC3NzaC1lZDI1NTE5AAAAIMOkzMAtLFGefWGHwapMWUFfTRaTNN6cuwB+UmRxLOnl
+        laura.puterbaugh
   - name: bryce.beuerlein
     groups: [sudo]
     sudo: ["ALL=(ALL) NOPASSWD:ALL"]
     shell: /bin/bash
     ssh-authorized-keys:
       - >
-        ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINCi/UDCweCp5f8ObgCfyy1+Soow
-        fcK1IQUiSPhslw4K bryce.beuerlein
+        ssh-ed25519
+        AAAAC3NzaC1lZDI1NTE5AAAAINCi/UDCweCp5f8ObgCfyy1+SoowfcK1IQUiSPhslw4K
+        bryce.beuerlein
   - name: christian.ray
     groups: [sudo]
     sudo: ["ALL=(ALL) NOPASSWD:ALL"]
     shell: /bin/bash
     ssh-authorized-keys:
       - >
-        ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILBKK+80D52NaF0AlMM3VGyc4BQ+
-        GWxkAMG8m5tgzobb christian.ray
+        ssh-ed25519
+        AAAAC3NzaC1lZDI1NTE5AAAAILBKK+80D52NaF0AlMM3VGyc4BQ+GWxkAMG8m5tgzobb
+        christian.ray
