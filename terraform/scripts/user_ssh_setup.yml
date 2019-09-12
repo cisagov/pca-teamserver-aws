@@ -62,7 +62,7 @@ users:
     ssh-authorized-keys:
       - >
         ssh-ed25519
-        AAAAC3NzaC1lZDI1NTE5AAAAIM3c5AcNHUslX5t2t0YZyejRWY4n3dIzbJEZdxSDRU4V
+        AAAAC3NzaC1lZDI1NTE5AAAAIFCxPL2YK4Yr02WVKoaELOODGBKsTsnCwEPif46wMCSh
         kelly.thiele
   - name: genevieve.marquardt
     groups: [sudo]
