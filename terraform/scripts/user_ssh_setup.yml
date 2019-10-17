@@ -100,3 +100,12 @@ users:
         ssh-ed25519
         AAAAC3NzaC1lZDI1NTE5AAAAILBKK+80D52NaF0AlMM3VGyc4BQ+GWxkAMG8m5tgzobb
         christian.ray
+  - name: jennifer.rodrick
+    groups: [sudo]
+    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+    shell: /bin/bash
+    ssh-authorized-keys:
+      - >
+        ssh-ed25519
+        AAAAC3NzaC1lZDI1NTE5AAAAILy6xA3x17WWJ1cH0BpJFeTCLqJfxEJV2N8yqO+HWvWz
+        jennifer.rodrick
