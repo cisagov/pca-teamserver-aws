@@ -1,4 +1,6 @@
 data "aws_route53_zone" "public_zone" {
+  provider = aws.dns
+
   name = local.public_zone
 }
 
