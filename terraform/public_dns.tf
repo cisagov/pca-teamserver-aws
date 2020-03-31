@@ -1,14 +1,8 @@
-data "aws_route53_zone" "public_zone" {
-  provider = aws.dns
-
-  name = local.public_zone
-}
-
 resource "aws_route53_record" "teamserver_pub_A" {
   provider = aws.dns
 
-  zone_id = data.aws_route53_zone.public_zone.zone_id
-  name    = "teamserver.${terraform.workspace}.${local.public_subdomain}${data.aws_route53_zone.public_zone.name}"
+  zone_id = data.terraform_remote_state.dns.outputs.cyber_dhs_gov_zone.id
+  name    = "teamserver.${terraform.workspace}.${local.public_subdomain}${data.terraform_remote_state.dns.outputs.cyber_dhs_gov_zone.name}"
   type    = "A"
   ttl     = 30
   records = [
