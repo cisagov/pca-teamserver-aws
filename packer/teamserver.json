@@ -33,9 +33,6 @@
   ],
   "provisioners": [
     {
-      "groups": [
-        "teamserver"
-      ],
       "playbook_file": "packer/ansible/playbook.yml",
       "type": "ansible"
     }

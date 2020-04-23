@@ -13,11 +13,12 @@
     - htop
     - persist_journald
 
-- hosts: teamserver
-  name: Install Cobalt Strike and server-setup script
+- hosts: all
+  name: Install Oracle Java, Cobalt Strike, and ServerSetup script
   become: yes
   become_method: sudo
   roles:
+    - oracle_java
     - cobalt_strike
     - server_setup
   tasks:
