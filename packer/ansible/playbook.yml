@@ -20,7 +20,7 @@
   roles:
     - oracle_java
     - cobalt_strike
-    - server_setup
+    - {role: server_setup, use_pca_script: true}
   tasks:
     - name: Install dnsutils
       package:
