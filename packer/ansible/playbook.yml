@@ -19,7 +19,7 @@
   become_method: sudo
   roles:
     - oracle_java
-    - cobalt_strike
+    - {role: cobalt_strike, bucket_name: cobalt-strike-for-pca-teamservers}
     - {role: server_setup, use_pca_script: true}
   tasks:
     - name: Install dnsutils
