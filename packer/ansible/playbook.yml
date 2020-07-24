@@ -1,24 +1,28 @@
 ---
 - hosts: all
   name: >
-    Update the base image, install python, add banner, and make journald
-    logs persistent
+    Add banner, add htop, add NVMe support, and make journald logs
+    persistent
   become: yes
   become_method: sudo
   roles:
-    - upgrade
-    - python
-    - nvme
     - banner
     - htop
+    - nvme
     - persist_journald
 
-- hosts: teamserver
+- hosts: all
   name: Install Cobalt Strike and server-setup script
   become: yes
   become_method: sudo
   roles:
-    - cobalt_strike
+    # Cobalt Strike requires that Java be installed, so OpenJDK must
+    # go first.
+    - openjdk
+    - role: cobalt_strike
+      vars:
+        # Use the bucket in the old CyHy account
+        bucket_name: cobalt-strike-for-pca-teamservers
     - server_setup
   tasks:
     - name: Install dnsutils

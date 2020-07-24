@@ -5,14 +5,16 @@
   name: cobalt_strike
 - src: https://github.com/cisagov/ansible-role-htop
   name: htop
-- src: https://github.com/cisagov/ansible-role-oracle-java
-  name: oracle_java
+- src: https://github.com/cisagov/ansible-role-openjdk
+  name: openjdk
 - src: https://github.com/cisagov/ansible-role-nvme
   name: nvme
 - src: https://github.com/cisagov/ansible-role-persist-journald
   name: persist_journald
 - src: https://github.com/cisagov/ansible-role-python
   name: python
+- src: https://github.com/cisagov/ansible-role-remove-python2
+  name: remove_python2
 - src: https://github.com/cisagov/ansible-role-server-setup
   name: server_setup
 - src: https://github.com/cisagov/ansible-role-upgrade
