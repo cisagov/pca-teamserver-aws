@@ -5,7 +5,7 @@
 Build AMI via Packer with:
 
 ```console
-packer packer/teamserver.json
+packer build packer/teamserver.json
 ```
 
 Build Terraform infrastructure with:
