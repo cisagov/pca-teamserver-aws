@@ -47,6 +47,7 @@ jobs:
             py${{ env.PY_VERSION }}-\
             tf${{ env.TERRAFORM_VERSION }}-\
             ${{ hashFiles('**/requirements-test.txt') }}-\
+            ${{ hashFiles('**/requirements.txt') }}-\
             ${{ hashFiles('**/.pre-commit-config.yaml') }}"
           restore-keys: |
             lint-${{ runner.os }}-py${{ env.PY_VERSION }}-\
