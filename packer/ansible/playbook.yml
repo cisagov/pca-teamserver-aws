@@ -23,7 +23,10 @@
       vars:
         # Use the bucket in the old CyHy account
         bucket_name: cobalt-strike-for-pca-teamservers
-    - server_setup
+    - role: server_setup
+      vars:
+        # Use the PCA-specific version of the ServerSetup script
+        use_pca_script: true
   tasks:
     - name: Install dnsutils
       package:
