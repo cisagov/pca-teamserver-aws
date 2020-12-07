@@ -26,29 +26,31 @@ jobs:
       - uses: actions/setup-go@v2
         with:
           go-version: '1.15'
+      - name: Store installed Go version
+        run: |
+          echo "GO_VERSION="\
+          "$(go version | sed 's/^go version go\([0-9.]\+\) .*/\1/')" \
+          >> $GITHUB_ENV
       - name: Lookup go cache directory
         run: echo "GOCACHE_DIR=$(go env GOCACHE)" >> $GITHUB_ENV
-      - name: Cache linting environments
-        uses: actions/cache@v2
+      - uses: actions/cache@v2
+        env:
+          BASE_CACHE_KEY: "${{ github.job }}-${{ runner.os }}-\
+            py${{ steps.setup-python.outputs.python-version }}-\
+            go${{ env.GO_VERSION }}-\
+            tf${{ env.TERRAFORM_VERSION }}-"
         with:
           path: |
             ${{ env.PIP_CACHE_DIR }}
             ${{ env.PRE_COMMIT_CACHE_DIR }}
             ${{ env.CURL_CACHE_DIR }}
             ${{ env.GOCACHE_DIR }}
-          key: "lint-${{ runner.os }}-\
-            py${{ steps.setup-python.outputs.python-version }}-\
-            go${{ env.GO_VERSION }}-\
-            tf${{ env.TERRAFORM_VERSION }}-\
+          key: "${{ env.BASE_CACHE_KEY }}\
             ${{ hashFiles('**/requirements-test.txt') }}-\
             ${{ hashFiles('**/requirements.txt') }}-\
             ${{ hashFiles('**/.pre-commit-config.yaml') }}"
           restore-keys: |
-            lint-${{ runner.os }}-\
-            py${{ steps.setup-python.outputs.python-version }}-
-            go${{ env.GO_VERSION }}-\
-            tf${{ env.TERRAFORM_VERSION }}-
-            lint-${{ runner.os }}-
+            ${{ env.BASE_CACHE_KEY }}
       - name: Install Terraform
         run: |
           mkdir -p ${{ env.CURL_CACHE_DIR }}
@@ -80,5 +82,5 @@ jobs:
       - name: Run pre-commit on all files
         run: pre-commit run --all-files
       - name: Setup tmate debug session
-        uses: mxschmitt/action-tmate@v1
+        uses: mxschmitt/action-tmate@v3
         if: env.RUN_TMATE
