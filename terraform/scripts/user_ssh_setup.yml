@@ -37,15 +37,15 @@ users:
         ssh-ed25519
         AAAAC3NzaC1lZDI1NTE5AAAAIHJkFgYx58vd/JCikIQRVmQUBNa5k1h9Z+xzM6AjZLqE
         jeremy.frasier
-  - name: kyle.evers
+  - name: benjamin.elliott
     groups: [sudo]
     sudo: ["ALL=(ALL) NOPASSWD:ALL"]
     shell: /bin/bash
     ssh-authorized-keys:
       - >
         ssh-ed25519
-        AAAAC3NzaC1lZDI1NTE5AAAAIKY5tqMRtnZSkVPwU0X1zKA8L3RnvmhSAR/bHAtd3Vcr
-        kyle.evers
+        AAAAC3NzaC1lZDI1NTE5AAAAILPZv6v8R+BRXTUGqz7rVOq74JiHw925VEoBsmupzIdK
+        benjamin.elliott
   - name: anna.etherton
     groups: [sudo]
     sudo: ["ALL=(ALL) NOPASSWD:ALL"]
@@ -82,15 +82,6 @@ users:
         ssh-ed25519
         AAAAC3NzaC1lZDI1NTE5AAAAIMOkzMAtLFGefWGHwapMWUFfTRaTNN6cuwB+UmRxLOnl
         laura.puterbaugh
-  - name: bryce.beuerlein
-    groups: [sudo]
-    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
-    shell: /bin/bash
-    ssh-authorized-keys:
-      - >
-        ssh-ed25519
-        AAAAC3NzaC1lZDI1NTE5AAAAINCi/UDCweCp5f8ObgCfyy1+SoowfcK1IQUiSPhslw4K
-        bryce.beuerlein
   - name: christian.ray
     groups: [sudo]
     sudo: ["ALL=(ALL) NOPASSWD:ALL"]
