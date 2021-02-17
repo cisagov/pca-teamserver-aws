@@ -100,3 +100,12 @@ users:
         ssh-ed25519
         AAAAC3NzaC1lZDI1NTE5AAAAILy6xA3x17WWJ1cH0BpJFeTCLqJfxEJV2N8yqO+HWvWz
         jennifer.rodrick
+  - name: amelia.vance
+    groups: [sudo]
+    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+    shell: /bin/bash
+    ssh-authorized-keys:
+      - >
+        ssh-ed25519
+        AAAAC3NzaC1lZDI1NTE5AAAAILe0QNyD16dGobBGRdSrlTQ+dxtoCru8EvqI5PGQhO/y
+        amelia.vance
