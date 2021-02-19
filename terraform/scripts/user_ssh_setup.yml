@@ -100,6 +100,15 @@ users:
         ssh-ed25519
         AAAAC3NzaC1lZDI1NTE5AAAAILy6xA3x17WWJ1cH0BpJFeTCLqJfxEJV2N8yqO+HWvWz
         jennifer.rodrick
+  - name: mina.salehi
+    groups: [sudo]
+    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+    shell: /bin/bash
+    ssh-authorized-keys:
+      - >
+        ssh-ed25519
+        SHA256:MEw5IgyXsQtPVkjZAKWVD7i4urLANPgW7mjE3ab2Jec
+        mina.salehi
   - name: amelia.vance
     groups: [sudo]
     sudo: ["ALL=(ALL) NOPASSWD:ALL"]
