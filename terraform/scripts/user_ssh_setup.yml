@@ -107,7 +107,7 @@ users:
     ssh-authorized-keys:
       - >
         ssh-ed25519
-        SHA256:MEw5IgyXsQtPVkjZAKWVD7i4urLANPgW7mjE3ab2Jec
+        AAAAC3NzaC1lZDI1NTE5AAAAICPNyoFAxtcHTCD8VWYeH8Izg+L7f5rzM2XU9eq7ZzSj
         mina.salehi
   - name: amelia.vance
     groups: [sudo]
