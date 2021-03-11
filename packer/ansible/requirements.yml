@@ -3,6 +3,7 @@
   name: banner
 - src: https://github.com/cisagov/ansible-role-cobalt-strike
   name: cobalt_strike
+  version: bugfix/do-not-update
 - src: https://github.com/cisagov/ansible-role-htop
   name: htop
 - src: https://github.com/cisagov/ansible-role-nvme
