@@ -2,10 +2,14 @@
 # Files already tracked by Git are not affected.
 # See: https://git-scm.com/docs/gitignore
 
+## Ansible ##
+playbook.retry
+
 ## Python ##
 __pycache__
 .mypy_cache
 .python-version
+
+## Terraform ##
 .terraform
 *.tfvars
-playbook.retry
